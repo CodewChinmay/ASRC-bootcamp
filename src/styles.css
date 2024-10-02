@@ -1,0 +1,550 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+
+/* body{
+    background-color: #03506F;
+} */
+
+  
+/* Hide scrollbar in WebKit browsers */
+::-webkit-scrollbar {
+    display: none;
+  }
+  
+
+li{
+    list-style: none;
+}
+
+
+
+
+/* section{
+    height: 100vh;
+} */
+
+
+
+.home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(Images/pexels-rahulp9800-1933900.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    flex-direction: column;
+    position: relative;
+    height: 100vh;
+
+}
+.home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+    z-index: 1;
+  }
+
+
+
+  .blink-message {
+    position: absolute; /* Position the message relative to the parent container */
+    top: 80%; /* Place it right below the .home-content */
+    left: 50%; /* Center it horizontally */
+    transform: translateX(-50%); /* Adjust to center horizontally */
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px 20px;
+    font-size: 1em;
+    color: rgb(255, 255, 255);
+    border-radius: 8px;
+    z-index: 1000;
+    animation: blink 1s infinite;
+    display: none; /* Hidden by default */
+}
+  
+
+  @keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  
+.about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #101010;
+    height: 100vh;
+}
+.team{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #101010;
+    height: 100vh;
+}
+.projects{
+    display: flex;
+    background-color: #101010;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.contact{
+    background-color: #101010;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.home-content{
+    background-color: #ba0f0f00;
+
+    width: 80%;
+    color: white;
+    z-index: 2;
+
+}
+.home-content h1{
+    font-size: 2em;
+    
+
+}
+.home-content p{
+    font-size: 1.5em;   
+    text-align: justify;
+
+
+
+
+}
+
+.ytlink{
+    color: rgb(255, 255, 255);
+    font-size: 3em;
+    background-color: red;
+    border-radius: 8px;
+    padding: 8px;
+    margin-top: 25px;
+}
+
+
+.about-content{
+    background-color: #ffffff00;
+
+    width: 80%;
+    color: white;
+
+}
+.about-content h1{
+    font-size: 2.5em;
+
+
+}
+.about-content p{
+    font-size: 1.5em; 
+    text-align: justify;
+
+}
+
+
+.team-content{
+    background-color: #ffffff00;
+
+    width: 80%;
+    color: white;
+}
+
+
+/* .member-box{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.card{
+    margin-top: 20px;
+    background-color: rgb(21, 62, 62);
+    height: auto;
+    min-width: 250px;
+    max-width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px 30px;
+} */
+
+
+
+
+.member-box {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: flex-start; /* Align items to the top */
+    flex-wrap: wrap;
+}
+
+.card {
+    margin-top: 20px;
+    background-color: rgb(40, 30, 136);
+    height: 300px;
+    min-width: 250px;
+    max-width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    color: white;
+    transition: background-color 0.2s ease-in-out; /* Smooth transition for background color */
+    position: relative; /* Necessary for positioning the image */
+    overflow: hidden; /* Ensure content doesn't spill out */
+}
+
+.card-a {
+    background-color: rgba(255, 0, 0, 0.548);
+}
+
+.card-a .description{
+    text-align: left;
+}
+
+/* Image styling - hidden by default */
+.card-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0; /* Hide the image */
+    transition: opacity 0.3s ease-in-out; /* Smooth fade-in effect */
+    z-index: 1; /* Ensure the image appears on top */
+}
+
+
+.card-a:hover .card-image {
+    opacity: 1; 
+    z-index: 2; 
+}
+
+/* Card tap (mobile) */
+.card-a:active .card-image {
+    opacity: 1; /* Show image when tapped on mobile */
+}
+
+.card-a:active h5,
+.card-a:active p {
+    opacity: 0; /* Hide text when tapped on mobile */
+}
+
+
+.card-a:hover h5,
+.card-a:hover p {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out; 
+}
+
+
+.card-s{
+    background-color: rgb(255, 123, 0);
+
+}
+
+
+.card-s:hover .card-image {
+    opacity: 1; 
+    z-index: 2; 
+}
+
+
+.card-s:hover h5,
+.card-s:hover p {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out; 
+}
+
+
+.card-r{
+    background-color: blue;
+}
+
+
+.card-r:hover .card-image {
+    opacity: 1; 
+    z-index: 2; 
+}
+
+
+.card-r:hover h5,
+.card-r:hover p {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out; 
+}
+
+
+
+
+.card-c{
+    background-color: goldenrod;
+}
+
+.card-c:hover .card-image {
+    opacity: 1; 
+    z-index: 2; 
+}
+
+
+.card-c:hover h5,
+.card-c:hover p {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out; 
+}
+
+.card h5 {
+    margin: 0;
+    font-size: 6em;
+    text-align: center;
+}
+
+.card .name {
+    font-size: 1.2em;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.card .description {
+    font-size: 1em;
+    text-align: center;
+    margin: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+.team-content h1{
+    font-size: 2.5em;
+
+}
+.team-content h4{
+    font-size: 1.5em;
+}
+.team-content p{
+    font-size: 1.5em;   
+}
+
+/* .team-content ul {
+    padding: 0; 
+}
+
+.team-content li {
+    margin-top: 20px; 
+} */
+
+
+
+
+
+.projects-content{
+    background-color: #ffffff00;
+
+    width: 80%;
+    color: white;
+}
+.projects-content h1{
+    font-size: 2em;
+
+}
+.projects-content p{
+    font-size: 1.5em;   
+    text-align: justify;
+
+}
+
+
+
+.contact-content{
+    background-color: #ffffff00;
+
+    width: 80%;
+    color: white;
+}
+.contact-content h1{
+    font-size: 2em;
+}
+.contact-content p{
+    font-size: 1.5em; 
+    text-align: justify;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 1042px) {
+
+
+
+
+
+    .blink-message {
+        display: block; /* Show on mobile screens */
+      }
+
+    
+
+
+    .home-content{
+        background-color: #ffffff00;
+    
+        width: 80%;
+
+
+    }
+    .home-content h1{
+        font-size: 1.5em;
+    }
+    .home-content p{
+        font-size: 1em;   
+    }
+
+
+
+
+    .about-content{
+        background-color: #ffffff00;
+    
+        width: 80%;
+
+
+    }
+    .about-content h1{
+        font-size: 1.5em;
+        color: rgb(255, 255, 255);
+    }
+    .about-content p{
+        font-size: 1em;   
+    }
+
+
+    .team{
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        background-color: #101010;
+        height: 200vh;
+    }
+
+
+    .team-content{
+
+        position: relative;
+        top: 80px;
+        background-color: #ffffff00;
+    
+        width: 80%;
+
+    }
+
+
+
+
+    .member-box {
+        display: flex;
+        flex-direction: column; /* Stack cards vertically on small screens */
+        align-items: center; /* Center items horizontally */
+    }
+
+    .card {
+        margin: 10px 0; /* Add vertical margin between stacked cards */
+        width: 80%; /* Adjust width to fit the screen */
+        height: auto; /* Let height adjust according to content */
+    }
+
+
+
+    .team-content h1{
+        font-size: 1.5em;
+    }
+    /* .team-content h4{
+        font-size: 1em;
+    }
+    .team-content p{
+        font-size: 1em;   
+    } */
+
+
+
+
+
+
+
+
+    .projects-content{
+        background-color: #ffffff00;
+    
+        width: 80%;
+
+    }
+    .projects-content h1{
+        font-size: 1.5em;
+    }
+    .projects-content p{
+        font-size: 1em;   
+    }
+    
+    
+    
+    .contact-content{
+        background-color: #ffffff00;
+    
+        width: 80%;
+    }
+    .contact-content h1{
+        font-size: 1.5em;
+        color: #ffffff;
+    }
+    .contact-content p{
+        font-size: 1em;  
+        color: white; 
+    }
+    
+}

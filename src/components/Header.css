@@ -1,0 +1,94 @@
+a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 1.4em;
+}
+
+.header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 30px;
+    background-color: rgba(16, 16, 16, 0.696); /* Make background transparent for glass effect */
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px); 
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
+}
+
+.r-menu a {
+    color: white; /* Default color */
+    transition: color 0.3s ease-in-out;
+}
+
+.r-menu a.active {
+    color: rgb(0, 179, 255); 
+}
+
+.r-menu ul {
+    display: flex;
+    gap: 50px;
+
+}
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    width: 150px;
+}
+
+.logo a {
+    font-size: 1.8em;
+    font-weight: 400;
+}
+
+.menu-bar {
+    color: white;
+    font-size: 2em;
+    display: none;
+}
+
+
+
+@media (max-width: 1042px) {
+    .header {
+        justify-content: space-around;
+        padding: 20px;
+    }
+
+    .logo img {
+        width: 22%;
+    }
+
+    .r-menu {
+        display: block;
+    }
+
+    .r-menu ul {
+        flex-direction: column;
+        position: absolute;
+        top: 100px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        padding: 30px 30px;
+        background-color: rgba(16, 16, 16, 0.696); /* Make background transparent for glass effect */
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px); 
+        display: none; /* Hide by default */
+        transition: all 0.3s ease-in-out;
+    }
+
+    .r-menu.open ul {
+        display: flex; /* Show menu when open class is applied */
+    }
+
+    .menu-bar {
+        display: block;
+        cursor: pointer;
+    }
+}
